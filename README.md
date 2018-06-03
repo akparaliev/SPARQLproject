@@ -67,6 +67,11 @@ SELECT distinct ?filmLabel (year(?date) as ?year) ?countryLabel  ?genreLabel ?ba
   - country of origin (P495), 
   - genre (P136)  
   - (see detail information: https://www.wikidata.org/wiki/Property:P136 , where P136 is property code)
+- Prefixes:
+  - wdt: Truthy assertions about the data, links entity to value directly.
+  - wd: Wikibase entity - item or property.
+  - rdfs: <http://www.w3.org/2000/01/rdf-schema#> (For labels, only rdfs:label is stored but not schema:name or skos:prefLabel. Since they all have the same data, storing all three is redundant.)
+  - (see detail information: https://www.mediawiki.org/wiki/Wikibase/Indexing/RDF_Dump_Format#Prefixes_used)
 
 
 ### simple query to find films with book author names
@@ -105,7 +110,11 @@ SELECT distinct ?filmLabel (year(?date) as ?year) ?countryLabel  ?genreLabel ?bo
   - country of origin (P495), 
   - genre (P136)  
   - (see detail information: https://www.wikidata.org/wiki/Property:P136 , where P136 is property code)
-
+- Prefixes:
+  - wdt: Truthy assertions about the data, links entity to value directly.
+  - wd: Wikibase entity - item or property.
+  - rdfs: <http://www.w3.org/2000/01/rdf-schema#> (For labels, only rdfs:label is stored but not schema:name or skos:prefLabel. Since they all have the same data, storing all three is redundant.)
+  - (see detail information: https://www.mediawiki.org/wiki/Wikibase/Indexing/RDF_Dump_Format#Prefixes_used)
 
 
 
