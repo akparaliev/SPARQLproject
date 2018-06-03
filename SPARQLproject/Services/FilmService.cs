@@ -13,8 +13,7 @@ using VDS.RDF.Storage;
 namespace SPARQLproject.Services
 {
     public class FilmService
-    {
-
+    { 
         public List<FilmModel> GetFilmsByBookName(List<string> booksName)
         {
             var filtQ = GetFilteredQuery(booksName, "?basedOnBookLabel");
@@ -33,9 +32,9 @@ namespace SPARQLproject.Services
             return ReturnListOfFilms(query);
         }
 
-        public List<FilmModel> GetFilmsByBookAuthor(List<string> books)
+        public List<FilmModel> GetFilmsByBookAuthor(List<string> authorsName)
         {
-            var filtQ = GetFilteredQuery(books, "?bookAuthorLabel");
+            var filtQ = GetFilteredQuery(authorsName, "?bookAuthorLabel");
             var query = "SELECT distinct ?filmLabel (year(?date) as ?year) ?countryLabel ?genreLabel ?bookAuthorLabel WHERE { " +
                    "?film wdt:P31 wd:Q11424. " +
                    "?film wdt:P144  ?basedOnBook. " +

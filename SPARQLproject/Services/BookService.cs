@@ -31,10 +31,7 @@ namespace SPARQLproject.Services
             var accessToken = client.GetAccessToken(requestToken).GetAwaiter().GetResult();
             _authClient = GoodreadsClient.CreateAuth(GOODREADS_KEY, GOODREADS_SECRET, accessToken.Token, accessToken.Secret);
         }
-        private void Auth()
-        {
-          
-        }
+
         public List<BookModel> GetUserBooks(long userId)
         {
             var allBooks = new List<Review>();
