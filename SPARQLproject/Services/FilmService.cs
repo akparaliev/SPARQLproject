@@ -63,11 +63,11 @@ namespace SPARQLproject.Services
             {
                 films.Add(new FilmModel()
                 {
-                    Name = ((ILiteralNode)result[0]).Value,
-                    Year = ((ILiteralNode)result[1]).Value,
-                    Country = ((ILiteralNode)result[2]).Value,
-                    Genre = ((ILiteralNode)result[3]).Value,
-                    SearchParam = ((ILiteralNode)result[4]).Value
+                    Name = ((ILiteralNode)result[0])?.Value,
+                    Year = ((ILiteralNode)result[1])?.Value,
+                    Country = ((ILiteralNode)result[2])?.Value,
+                    Genre = ((ILiteralNode)result[3])?.Value,
+                    SearchParam = ((ILiteralNode)result[4])?.Value
                 });
             }
 

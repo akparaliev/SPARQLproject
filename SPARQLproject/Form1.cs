@@ -21,6 +21,8 @@ namespace SPARQLproject
             InitializeComponent();
             AuthorizeGoodreads();
             rbSearchByBookName.Checked = true;
+            bsBooks.DataSource = new List<BookModel>();
+            bsFilms.DataSource = new List<FilmModel>();
         }
 
         private void AuthorizeGoodreads()
@@ -47,13 +49,20 @@ namespace SPARQLproject
         private void btnSearch_Click(object sender, EventArgs e)
         {
             var books = (List<BookModel>)bsBooks.DataSource;
-            if (rbSearchByBookName.Checked)
+            if (books.Any(x => x.IsSelected))
             {
-                bsFilms.DataSource = filmService.GetFilmsByBookName(books.Where(x => x.IsSelected).Select(x=>x.Name).ToList());
+                if (rbSearchByBookName.Checked)
+                {
+                    bsFilms.DataSource = filmService.GetFilmsByBookName(books.Where(x => x.IsSelected).Select(x => x.Name).ToList());
+                }
+                else if (rbSearchByBookAuthor.Checked)
+                {
+                    bsFilms.DataSource = filmService.GetFilmsByBookAuthor(books.Where(x => x.IsSelected).Select(x => x.Author).ToList());
+                }
             }
-            else if (rbSearchByBookAuthor.Checked)
+            else
             {
-                bsFilms.DataSource = filmService.GetFilmsByBookAuthor(books.Where(x => x.IsSelected).Select(x=>x.Author).ToList());
+                MessageBox.Show("select at least one book");
             }
         }
 

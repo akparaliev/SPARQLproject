@@ -35,30 +35,30 @@ namespace SPARQLproject
             this.txtUserId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgBooks = new System.Windows.Forms.DataGridView();
-            this.btnSumbitAccount = new System.Windows.Forms.Button();
-            this.dgFilms = new System.Windows.Forms.DataGridView();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnSelectAll = new System.Windows.Forms.Button();
-            this.gbSearchType = new System.Windows.Forms.GroupBox();
-            this.rbSearchByBookName = new System.Windows.Forms.RadioButton();
-            this.rbSearchByBookAuthor = new System.Windows.Forms.RadioButton();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isSelectedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.bsBooks = new System.Windows.Forms.BindingSource(this.components);
+            this.btnSumbitAccount = new System.Windows.Forms.Button();
+            this.dgFilms = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.countryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.searchParamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsFilms = new System.Windows.Forms.BindingSource(this.components);
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnSelectAll = new System.Windows.Forms.Button();
+            this.gbSearchType = new System.Windows.Forms.GroupBox();
+            this.rbSearchByBookAuthor = new System.Windows.Forms.RadioButton();
+            this.rbSearchByBookName = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgBooks)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgFilms)).BeginInit();
-            this.gbSearchType.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsBooks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgFilms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFilms)).BeginInit();
+            this.gbSearchType.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -132,6 +132,34 @@ namespace SPARQLproject
             this.dgBooks.Size = new System.Drawing.Size(482, 607);
             this.dgBooks.TabIndex = 2;
             // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Author";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Author";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // isSelectedDataGridViewCheckBoxColumn
+            // 
+            this.isSelectedDataGridViewCheckBoxColumn.DataPropertyName = "IsSelected";
+            this.isSelectedDataGridViewCheckBoxColumn.HeaderText = "IsSelected";
+            this.isSelectedDataGridViewCheckBoxColumn.Name = "isSelectedDataGridViewCheckBoxColumn";
+            // 
+            // bsBooks
+            // 
+            this.bsBooks.DataSource = typeof(SPARQLproject.Models.BookModel);
+            // 
             // btnSumbitAccount
             // 
             this.btnSumbitAccount.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -163,91 +191,6 @@ namespace SPARQLproject
             this.dgFilms.ReadOnly = true;
             this.dgFilms.Size = new System.Drawing.Size(726, 463);
             this.dgFilms.TabIndex = 7;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSearch.Location = new System.Drawing.Point(308, 688);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(177, 32);
-            this.btnSearch.TabIndex = 8;
-            this.btnSearch.Text = "Search movies";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // btnSelectAll
-            // 
-            this.btnSelectAll.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSelectAll.Location = new System.Drawing.Point(186, 688);
-            this.btnSelectAll.Name = "btnSelectAll";
-            this.btnSelectAll.Size = new System.Drawing.Size(116, 32);
-            this.btnSelectAll.TabIndex = 9;
-            this.btnSelectAll.Text = "Select all";
-            this.btnSelectAll.UseVisualStyleBackColor = true;
-            this.btnSelectAll.Click += new System.EventHandler(this.btnSelectAll_Click);
-            // 
-            // gbSearchType
-            // 
-            this.gbSearchType.Controls.Add(this.rbSearchByBookAuthor);
-            this.gbSearchType.Controls.Add(this.rbSearchByBookName);
-            this.gbSearchType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbSearchType.Location = new System.Drawing.Point(491, 3);
-            this.gbSearchType.Name = "gbSearchType";
-            this.tableLayoutPanel1.SetRowSpan(this.gbSearchType, 2);
-            this.gbSearchType.Size = new System.Drawing.Size(726, 66);
-            this.gbSearchType.TabIndex = 10;
-            this.gbSearchType.TabStop = false;
-            this.gbSearchType.Text = "Choose a search type";
-            // 
-            // rbSearchByBookName
-            // 
-            this.rbSearchByBookName.AutoSize = true;
-            this.rbSearchByBookName.Location = new System.Drawing.Point(266, 33);
-            this.rbSearchByBookName.Name = "rbSearchByBookName";
-            this.rbSearchByBookName.Size = new System.Drawing.Size(95, 17);
-            this.rbSearchByBookName.TabIndex = 0;
-            this.rbSearchByBookName.TabStop = true;
-            this.rbSearchByBookName.Text = "by Book Name";
-            this.rbSearchByBookName.UseVisualStyleBackColor = true;
-            // 
-            // rbSearchByBookAuthor
-            // 
-            this.rbSearchByBookAuthor.AutoSize = true;
-            this.rbSearchByBookAuthor.Location = new System.Drawing.Point(405, 33);
-            this.rbSearchByBookAuthor.Name = "rbSearchByBookAuthor";
-            this.rbSearchByBookAuthor.Size = new System.Drawing.Size(98, 17);
-            this.rbSearchByBookAuthor.TabIndex = 1;
-            this.rbSearchByBookAuthor.TabStop = true;
-            this.rbSearchByBookAuthor.Text = "by Book Author";
-            this.rbSearchByBookAuthor.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Author";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Author";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // isSelectedDataGridViewCheckBoxColumn
-            // 
-            this.isSelectedDataGridViewCheckBoxColumn.DataPropertyName = "IsSelected";
-            this.isSelectedDataGridViewCheckBoxColumn.HeaderText = "IsSelected";
-            this.isSelectedDataGridViewCheckBoxColumn.Name = "isSelectedDataGridViewCheckBoxColumn";
-            // 
-            // bsBooks
-            // 
-            this.bsBooks.DataSource = typeof(SPARQLproject.Models.BookModel);
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -288,6 +231,63 @@ namespace SPARQLproject
             // 
             this.bsFilms.DataSource = typeof(SPARQLproject.Models.FilmModel);
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSearch.Location = new System.Drawing.Point(308, 688);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(177, 32);
+            this.btnSearch.TabIndex = 8;
+            this.btnSearch.Text = "Search movies";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnSelectAll
+            // 
+            this.btnSelectAll.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSelectAll.Location = new System.Drawing.Point(186, 688);
+            this.btnSelectAll.Name = "btnSelectAll";
+            this.btnSelectAll.Size = new System.Drawing.Size(116, 32);
+            this.btnSelectAll.TabIndex = 9;
+            this.btnSelectAll.Text = "Select all";
+            this.btnSelectAll.UseVisualStyleBackColor = true;
+            this.btnSelectAll.Click += new System.EventHandler(this.btnSelectAll_Click);
+            // 
+            // gbSearchType
+            // 
+            this.gbSearchType.Controls.Add(this.rbSearchByBookAuthor);
+            this.gbSearchType.Controls.Add(this.rbSearchByBookName);
+            this.gbSearchType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbSearchType.Location = new System.Drawing.Point(491, 3);
+            this.gbSearchType.Name = "gbSearchType";
+            this.tableLayoutPanel1.SetRowSpan(this.gbSearchType, 2);
+            this.gbSearchType.Size = new System.Drawing.Size(726, 66);
+            this.gbSearchType.TabIndex = 10;
+            this.gbSearchType.TabStop = false;
+            this.gbSearchType.Text = "Choose a search type";
+            // 
+            // rbSearchByBookAuthor
+            // 
+            this.rbSearchByBookAuthor.AutoSize = true;
+            this.rbSearchByBookAuthor.Location = new System.Drawing.Point(405, 33);
+            this.rbSearchByBookAuthor.Name = "rbSearchByBookAuthor";
+            this.rbSearchByBookAuthor.Size = new System.Drawing.Size(98, 17);
+            this.rbSearchByBookAuthor.TabIndex = 1;
+            this.rbSearchByBookAuthor.TabStop = true;
+            this.rbSearchByBookAuthor.Text = "by Book Author";
+            this.rbSearchByBookAuthor.UseVisualStyleBackColor = true;
+            // 
+            // rbSearchByBookName
+            // 
+            this.rbSearchByBookName.AutoSize = true;
+            this.rbSearchByBookName.Location = new System.Drawing.Point(266, 33);
+            this.rbSearchByBookName.Name = "rbSearchByBookName";
+            this.rbSearchByBookName.Size = new System.Drawing.Size(95, 17);
+            this.rbSearchByBookName.TabIndex = 0;
+            this.rbSearchByBookName.TabStop = true;
+            this.rbSearchByBookName.Text = "by Book Name";
+            this.rbSearchByBookName.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -299,11 +299,11 @@ namespace SPARQLproject
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgBooks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsBooks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFilms)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsFilms)).EndInit();
             this.gbSearchType.ResumeLayout(false);
             this.gbSearchType.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsBooks)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsFilms)).EndInit();
             this.ResumeLayout(false);
 
         }
